@@ -15,6 +15,7 @@ public class EmployeeDriver {
 		
 		while (true) {
 			
+			System.out.println();
 			System.out.println("1. Register Complaint");
             System.out.println("2. Check Status of Complaint");
 			System.out.println("3. See All Complaints");
