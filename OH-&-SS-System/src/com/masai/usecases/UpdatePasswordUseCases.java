@@ -10,34 +10,29 @@ import com.masai.exceptions.EngineerException;
 import com.masai.exceptions.HodException;
 import com.masai.exceptions.MyException;
 
-public class LoginEngineerUseCase {
+public class UpdatePasswordUseCases {
 	
 	public static void main(String[] args)throws EmployeeException, MyException, HodException, ComplainException {
 		
-		
 		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Enter Your Username : ");
-		String username = sc.next();
 		
-		System.out.println("Enter Your Password : ");
-		String password = sc.next();
-		
-		
-		EngineerDao ed = new EngineerDaoImpl();
-		
-		
-		
-		try {
-			
-			String res = ed.loginEngineer(username, password);
+		  System.out.println("Enter Engineer Id :");
+		  int engid = sc.nextInt();
+		  System.out.println("Enter New Password :");
+		  String password = sc.next();
+		  
+		  
+		  EngineerDao ed = new EngineerDaoImpl();
+		  
+		  try {
+			String res = ed.changePassword(password, engid);
 			System.out.println(res);
-			EngineerDriver.main(args);
+			
 		} catch (EngineerException e) {
-			// TODO: handle exception
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+		EngineerDriver.main(args);
 		
 	}
 

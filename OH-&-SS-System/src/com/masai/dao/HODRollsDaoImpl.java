@@ -129,6 +129,8 @@ public class HODRollsDaoImpl implements HODRollsDao{
 			
 			PreparedStatement ps = conn.prepareStatement("delete from Engineer where engId= ?");
 			
+			ps.setInt(1, engId);
+			
 			int x = ps.executeUpdate();
 			
 			if(x > 0) {

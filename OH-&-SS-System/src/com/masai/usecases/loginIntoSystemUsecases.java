@@ -4,11 +4,15 @@ import java.util.Scanner;
 
 import com.masai.dao.HODRollsDao;
 import com.masai.dao.HODRollsDaoImpl;
+import com.masai.exceptions.ComplainException;
+import com.masai.exceptions.EmployeeException;
+import com.masai.exceptions.EngineerException;
 import com.masai.exceptions.HodException;
+import com.masai.exceptions.MyException;
 
 public class loginIntoSystemUsecases {
 	
-	public static void main(String[] args)throws HodException  {
+	public static void main(String[] args)throws EmployeeException, MyException, EngineerException, ComplainException,  HodException  {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -26,7 +30,7 @@ public class loginIntoSystemUsecases {
 			
 			String res = hd.loginIntoSystem(username, password);
 			System.out.println(res);
-		 //  ------------
+		    HODDriver.main(args);
 		} catch (HodException e) {
 			// TODO: handle exception
 			e.printStackTrace();

@@ -91,6 +91,105 @@ public class EngineerDaoImpl implements EngineerDao{
 		
 		
 	}
+
+	@Override
+	public String updateStatus(int engId) throws ComplainException {
+
+		String message = "Complain Status Not Updated...";
+		
+		try (Connection conn = DBUtil.provideConnection()) {
+			
+			PreparedStatement ps =  conn.prepareStatement("Update EngineerComplain set ComplainStatus = 'Resolved' where EcomplainId = ?");
+			
+			ps.setInt(1, engId);
+			
+			int x = ps.executeUpdate();
+			
+			if(x > 0) {
+				message = "Complain Status Updated Sucessfull... !";
+			}
+			
+		
+		} catch (SQLException e) {
+			// TODO: handle exception
+			message = e.getMessage();
+		}
+		
+	
+		return message;
+
+	}
+
+	@Override
+	public List<Eng_Com> AttendedComplain(int engid) throws ComplainException {
+		
+		List<Eng_Com> list = new ArrayList<>();
+		
+		try (Connection conn = DBUtil.provideConnection()) {
+			
+		   PreparedStatement ps = conn.prepareStatement("select * from EngineerComplain where engid = ? AND ComplainStatus = 'Resolved'");
+		   
+		   ps.setInt(1, engid);
+		   
+		   ResultSet rs = ps.executeQuery();
+		   
+		   while(rs.next()) {
+			   
+			   int engId = rs.getInt("engid");
+				String name = rs.getString("name");
+				String category = rs.getString("category");
+				int EcomplainId = rs.getInt("EcomplainId");
+				String ComplainStatus = rs.getString("ComplainStatus");
+				
+				list.add(new Eng_Com(engId, name, category, EcomplainId, ComplainStatus));
+			   
+			   
+		   }
+		   
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			
+			throw new ComplainException("No Complain Found...!");
+		}
+	
+		
+		return list;
+		
+	}
+
+	@Override
+	public String changePassword(String password, int engid) throws EngineerException {
+
+
+		String message = "Password Not Changed...";
+		
+		try (Connection conn = DBUtil.provideConnection()) {
+			
+			PreparedStatement ps = conn.prepareStatement("Update Engineer set password = ? where engid = ?");
+			
+			ps.setString(1, password);
+			ps.setInt(2, engid);
+			
+			int x = ps.executeUpdate();
+			
+			if(x > 0) {
+				message = "Password Updated Sucessfull...";
+			}
+			
+		
+			
+		} catch (SQLException e) {
+			// TODO: handle exception
+			
+			message = e.getMessage();
+			
+		}
+		
+	
+		return message;
+	}
 	
 	
 

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.masai.dao.EmployeeDao;
 import com.masai.dao.EmployeeDaoImpl;
 
-public class registerEmployeeUsecase1 {
+public class RegisterEmployeeUseCase1 {
 	
 	public static void main(String[] args) {
 		
@@ -20,13 +20,10 @@ public class registerEmployeeUsecase1 {
 		System.out.println("Enter Employee Password : ");
 		String password  = sc.next();
 		
-		EmployeeDao emp = new EmployeeDaoImpl();
+		EmployeeDao ed = new EmployeeDaoImpl();
 		
-		String res = emp.registerEmployee(name, username, password);
+		String res = ed.registerEmployee(name, username, password);
 		System.out.println(res);
-		
-		
-		
 	}
 
 }

@@ -4,12 +4,15 @@ import java.util.Scanner;
 
 import com.masai.dao.HODRollsDao;
 import com.masai.dao.HODRollsDaoImpl;
+import com.masai.exceptions.ComplainException;
+import com.masai.exceptions.EmployeeException;
 import com.masai.exceptions.EngineerException;
+import com.masai.exceptions.MyException;
 import com.masai.model.Engineer;
 
 public class RegisterEngineerUseCase_ {
 	
-	public static void main(String[] args)throws EngineerException {
+	public static void main(String[] args)throws EngineerException, EmployeeException, MyException, ComplainException {
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -38,7 +41,7 @@ public class RegisterEngineerUseCase_ {
 	    	
 	    	String res = hd.registerEngineer(eng);
 		    System.out.println(res);
-	
+	        HODDriver.main(args);
 		} catch (EngineerException e) {
 			// TODO: handle exception
 			e.printStackTrace();
