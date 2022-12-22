@@ -33,8 +33,8 @@ public class RegisterEmployeeUseCase2 {
 		
 		Employee emp = new Employee();
 		emp.setName(name);
-		emp.setName(username);
-		emp.setName(password);
+		emp.setUsername(username);
+		emp.setPassword(password);
 		
 		String res = empdao.registerEmployee2(emp);
 		
