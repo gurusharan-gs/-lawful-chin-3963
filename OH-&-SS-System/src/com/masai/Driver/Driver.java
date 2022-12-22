@@ -20,8 +20,9 @@ public class Driver {
 		System.out.println("Welcome to Online Hardware and Software Support System");
 		System.out.println("1. Login as HOD");
 		System.out.println("2. Login as Engineer");
-		System.out.println("3. Login as Employee");
-		System.out.println("4. Register as Employee");
+		System.out.println("3. Register as Employee");
+		System.out.println("4. Login as Employee");
+		
 		System.out.println();
 		
 		
@@ -34,9 +35,9 @@ public class Driver {
 		}else if(res == 2) {
 			LoginEngineerUseCase.main(args);
 		}else if(res == 3) {
-			LoginEmployeeUseCase.main(args);
+			RegisterEmployeeUseCase2.main(args);	
 		}else if(res == 4) {
-			RegisterEmployeeUseCase2.main(args);
+			LoginEmployeeUseCase.main(args);
 		}else {
 			throw new MyException("Invalid Input Please Try Again...");
 		}
