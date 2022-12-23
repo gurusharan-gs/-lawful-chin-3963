@@ -16,6 +16,7 @@ public class HODDriver {
 		while(true) {
 			
 		
+			System.out.println("---------------------------------------------------");
 			System.out.println("1. Register Engineer");
 			System.out.println("2. Get details of all Engineers");
 			System.out.println("3. Delete an Engineer");
@@ -23,6 +24,7 @@ public class HODDriver {
 			System.out.println("5. Assign Engineer");
 			System.out.println("6. To Main Page \n");
 			System.out.println("Please select an option to continue \n");
+			System.out.println("---------------------------------------------------");
 	
 			
 			Scanner sc = new Scanner(System.in);

@@ -8,7 +8,6 @@ public class Complain {
    
    public Complain() {
 			super();
-			// TODO Auto-generated constructor stub
    }
 	
 	

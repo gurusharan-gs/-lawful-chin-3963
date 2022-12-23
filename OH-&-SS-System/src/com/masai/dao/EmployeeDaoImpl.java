@@ -1,6 +1,8 @@
 package com.masai.dao;
 
 import java.sql.Connection;
+
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +14,7 @@ import com.masai.exceptions.EmployeeException;
 import com.masai.model.Complain;
 import com.masai.model.Employee;
 import com.masai.model.Eng_Com;
+import com.masai.utility.Color;
 import com.masai.utility.DBUtil;
 
 public class EmployeeDaoImpl implements EmployeeDao{
@@ -33,13 +36,12 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		    int x = ps.executeUpdate();
 		    
 		    if(x > 0) {
-		    	message = "Employee Registered Sucessfully !";
+		    	message = Color.ANSI_GREEN+"Employee Registered Sucessfully !";
 		    }
 		    
 			
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			
 			message = e.getMessage();
 		}
@@ -69,7 +71,6 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			}
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			
 			message = e.getMessage();
 		}
@@ -100,7 +101,6 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			}
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			
 			throw new EmployeeException("Employee Not Found...!");
@@ -132,8 +132,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			}
 			
 			
-		} catch (SQLException e) {
-			// TODO: handle exception	
+		} catch (SQLException e) {	
 			message = e.getMessage();
 		}
 				
@@ -166,7 +165,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			}
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
+
 			throw new ComplainException(e.getMessage());
 		}
 		if(list.size()==0) {
@@ -203,7 +202,6 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			e.getMessage();
 		}
 		
@@ -227,12 +225,12 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			
 			if(x > 0) {
 				message = "Password Updated Sucessfull...";
+				
 			}
 			
 			
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			message = e.getMessage();
 		}
 	

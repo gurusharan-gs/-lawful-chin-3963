@@ -45,7 +45,6 @@ public class RegisterEmployeeUseCase2 {
 			Driver.main(args);
 			
 		} catch (EmployeeException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 		

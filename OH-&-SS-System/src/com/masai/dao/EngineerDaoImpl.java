@@ -78,7 +78,7 @@ public class EngineerDaoImpl implements EngineerDao{
 			
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
+
 			throw new ComplainException("Complain Not Assigned...!");
 		}
 		
@@ -111,7 +111,6 @@ public class EngineerDaoImpl implements EngineerDao{
 			
 		
 		} catch (SQLException e) {
-			// TODO: handle exception
 			message = e.getMessage();
 		}
 		
@@ -148,7 +147,6 @@ public class EngineerDaoImpl implements EngineerDao{
 		   
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			
 			throw new ComplainException("No Complain Found...!");
@@ -181,7 +179,6 @@ public class EngineerDaoImpl implements EngineerDao{
 		
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			
 			message = e.getMessage();
 			
