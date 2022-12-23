@@ -40,7 +40,6 @@ public class HODRollsDaoImpl implements HODRollsDao{
 			
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.getStackTrace();
 		}
 		
@@ -73,7 +72,6 @@ public class HODRollsDaoImpl implements HODRollsDao{
 			
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			messege = e.getMessage();
 		}
 		
@@ -107,7 +105,6 @@ public class HODRollsDaoImpl implements HODRollsDao{
 			}
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			throw new EngineerException(e.getMessage());
 		}
 		if (eng.size() == 0) {
@@ -139,7 +136,6 @@ public class HODRollsDaoImpl implements HODRollsDao{
 			}
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
 			messege = e.getMessage();
 		}
 		
@@ -176,7 +172,7 @@ public class HODRollsDaoImpl implements HODRollsDao{
 			
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
+
 			throw new ComplainException(e.getMessage());
 		}
 		
@@ -215,7 +211,7 @@ public class HODRollsDaoImpl implements HODRollsDao{
 			
 			
 		} catch (SQLException e) {
-			// TODO: handle exception
+
 			message = e.getMessage();
 		}
 		
